@@ -31,5 +31,8 @@ us_df=us_df.drop_duplicates(subset=['title'])
 # Some videos may have different data and occupy more than one row, and drop_duplicates function always keeps the first one.  
 # Drop duplcates after sorted to keep the highest data of the video and remove the rest. 
 
+# To hide index, gb_df.to_csv('gb.csv', index=False)
+
+
 print(gb_df.iloc[:5])
 
