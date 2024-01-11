@@ -21,11 +21,15 @@ gb_df=gb_df[(gb_df.comments_disabled!=True) & (gb_df.ratings_disabled!=True)& (g
 us_df=us_df[(us_df.comments_disabled!=True) & (us_df.ratings_disabled!=True)& (us_df.video_error_or_removed!=True)]
 # Make sure the comments and ratings are not disabled
 
-gb_df=gb_df.drop_duplicates()
-
-
 gb_df=gb_df.sort_values(by='views', ascending=False)
+us_df=us_df.sort_values(by='views', ascending=False)
+# Sort the data based on 'view' 
 
+gb_df=gb_df.drop_duplicates(subset=['title'])
+us_df=us_df.drop_duplicates(subset=['title'])
+# After sorted the data, remove duplicated videos. 
+# Some videos may have different data and occupy more than one row, and drop_duplicates function always keeps the first one.  
+# Drop duplcates after sorted to keep the highest data of the video and remove the rest. 
 
-print(gb_df.to_csv('gb.csv'))
+print(gb_df.iloc[:5])
 
