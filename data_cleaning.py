@@ -33,6 +33,10 @@ us_df=us_df.drop_duplicates(subset=['title'])
 
 # To hide index, gb_df.to_csv('gb.csv', index=False)
 
+gb_df=gb_df.drop(columns=["comments_disabled","ratings_disabled","video_error_or_removed"])
+us_df=us_df.drop(columns=["comments_disabled","ratings_disabled","video_error_or_removed"])
+# Remove unnecessary column
 
-print(gb_df.iloc[:5])
+
+print(gb_df.to_csv('gb.csv'))
 
