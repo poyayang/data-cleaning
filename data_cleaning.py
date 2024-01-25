@@ -38,5 +38,5 @@ us_df=us_df.drop(columns=["comments_disabled","ratings_disabled","video_error_or
 # Remove unnecessary column
 
 
-print(gb_df.to_csv('gb.csv'))
+print(us_df.to_csv('us.csv'))
 
