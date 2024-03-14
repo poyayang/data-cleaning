@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from data_cleaning import gb_df, us_df
+from main import gb_df, us_df
 import matplotlib.pyplot as plt
 
 x_gb=gb_df.category_id.unique()
